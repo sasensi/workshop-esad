@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent
 {
+    data = [
+        'https://x.app',
+        'https://y.app',
+        'https://z.app',
+    ].sort(() => Math.random() > 0.5 ? 1 : -1);
 }
