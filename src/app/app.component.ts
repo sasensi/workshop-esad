@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, SecurityContext } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-root',
@@ -8,8 +9,14 @@ import { Component } from '@angular/core';
 export class AppComponent
 {
     data = [
-        'https://x.app',
-        'https://y.app',
-        'https://z.app',
-    ].sort(() => Math.random() > 0.5 ? 1 : -1);
+        { url: 'https://csb-xtjf0-ieo9rpqb1-sasensi.vercel.app/', name: '' },
+        { url: 'https://csb-xtjf0-ieo9rpqb1-sasensi.vercel.app/', name: '' },
+        { url: 'https://csb-xtjf0-ieo9rpqb1-sasensi.vercel.app/', name: '' },
+    ]
+        .map(( { url, name } ) => ({ url: this.domSanitizer.bypassSecurityTrustResourceUrl(url), name }))
+        .sort(() => Math.random() > 0.5 ? 1 : -1);
+
+    constructor ( private domSanitizer: DomSanitizer )
+    {
+    }
 }

@@ -1,6 +1,6 @@
 <main>
     <!-- todo: replace by iframes-->
     <div *ngFor="let item of data">
-        {{item}}
+        <iframe [src]="item.url"></iframe>
     </div>
 </main>

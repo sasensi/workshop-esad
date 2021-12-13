@@ -1,3 +1,7 @@
+::ng-deep body {
+    margin: 0;
+}
+
 main {
     background-color: #E7E7E7;
     padding: 50px;
@@ -6,11 +10,13 @@ main {
     align-items: center;
 }
 
-div {
-    width: 600px;
-    height: 600px;
+iframe {
+    border: none;
+    width: 500px;
+    height: 500px;
     background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
+    pointer-events: none;
 }
