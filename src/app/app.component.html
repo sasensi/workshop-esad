@@ -2,5 +2,6 @@
     <!-- todo: replace by iframes-->
     <div *ngFor="let item of data">
         <iframe [src]="item.url"></iframe>
+        <div class="name">{{item.name}}</div>
     </div>
 </main>

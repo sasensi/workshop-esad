@@ -10,6 +10,10 @@ main {
     align-items: center;
 }
 
+div {
+    position: relative;
+}
+
 iframe {
     border: none;
     width: 500px;
@@ -18,5 +22,22 @@ iframe {
     display: flex;
     align-items: center;
     justify-content: center;
-    pointer-events: none;
+}
+
+.name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 500ms;
+
+    &:hover {
+        opacity: 0.8;
+    }
 }
